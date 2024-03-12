@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script audits DNS records for specified subdomains of a domain.
+# lThis script audits DNS records for specified subdomains of a domain.
 
 function audit_subdomain {
     local domain="$1"
