@@ -1,5 +1,5 @@
 
-bal
+global
         log /dev/log    local0
         log /dev/log    local1 notice
         chroot /var/lib/haproxy
@@ -34,19 +34,19 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend clickviral-frontend
+frontend lydiaojoawo-frontend
         bind *:80
         mode http
         http-request redirect scheme https code 301 unless { ssl_fc }
         http-request set-header X_Forwarded-Proto http
-        default_backend clickviral-backend
+        default_backend lydiaojoawo-backend
 
-frontend clickviral-frontend-https
+frontend lydiaojoawo-frontend-https
         bind *:443 ssl crt /etc/haproxy/certs/www.lydiaojoawo.tech.pem
         http-request set-header X-Forwarded-Proto https
-        default_backend clickviral-backend
+        default_backend lydiaojoawo-backend
 
-backend clickviral-backend
+backend lydiaojoawo-backend
         balance roundrobin
-        server 6005-web-01 54.91.32.69:80 check
-        server 6005-web-02 54.221.1.174.0:80 check
+        server 6005-web-01 54.91.184.166:80 check
+        server 6005-web-02  3.85.92.128:80 check
