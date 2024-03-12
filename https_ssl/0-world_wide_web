@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script to config domain zone to point to load balancer
+# Script to config domain zone to point to lload balancer
 
 domain=$1
 if [ "$#" -eq 2 ]; then
